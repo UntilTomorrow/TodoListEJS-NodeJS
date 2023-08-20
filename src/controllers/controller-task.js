@@ -10,7 +10,7 @@ pool.on('error',(err)=> {
 module.exports = { 
     task(req,res){
         res.render('task', {
-            url: 'http//localhost:5000/',
+            url: '/',
         })
 
     },
@@ -20,13 +20,13 @@ module.exports = {
         let day = parts[0];
         let month = parts[1];
         let year = parts[2];
-        let formattedDate = `${year}-${month}-${day}`; // -> YYYY-MM-DD
+        let format = `${year}-${month}-${day}`; // -> YYYY-MM-DD
         let status = req.body.status === 'on' ? true : false; 
         let data = { 
             task_name: req.body.task_name, 
             description: req.body.description,
             status: status,
-            due_date: formattedDate 
+            due_date: format 
         };
         let sql = "INSERT INTO tasks SET ?";
         pool.query(sql, data, (err, results) => {
