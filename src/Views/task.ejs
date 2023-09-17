@@ -26,51 +26,52 @@
     
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-    
-                        <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">hi, dear</h1>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> </a>
-                        </div>
-    
-                        <!-- Content Row -->
-                        <div class="row">                          
-                        </div>
-    
-                        <!-- Content Row -->
-    
                         <div class="row">
-    
-                            <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="card shadow mb-4">
-                                    <!-- Body Log -->
-                                    <div class="card shadow mb-4">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">To Do </h6>
-                                        </div>
-                                            <!-- Table Body -->
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                     
-                                                </div>
+                            <div class="col-md-7">
+                                <a href="#myModal" class="btn btn-primary" style="margin-left: 20px;" data-toggle="modal" data-target="#myModal">New To Do</a>
+                            </div> 
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card-header">
+                                            <div class="card mb-4 py-3 border-bottom-primary">
+                                                <h4 class="tw-text-base bg-warning tw-text-white tw-p-3 tw-font-semibold tw-rounded-t" style="font-size: 20px;">
+                                                    <i class="fa fa-warning fa-lg"></i> Unfinished to do's
+                                                </h4>                                                
+                                                <ul class="list-unstyled todo unfinished-todos todos-sortable ui-sortable">
+                                                    <li class="padding no-todos ui-state-disabled"> No todos found </li>
+                                                </ul>
                                             </div>
-                                        </div>   
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-area">
-                                            <canvas id=""></canvas>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 text-center padding">
+                                                <a href="#" class="btn btn-default text-center unfinished-loader disabled">Load More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-header">
+                                            <div class="card mb-4 py-3 border-bottom-primary">
+                                                <h4 class="tw-text-base bg-info tw-text-white tw-p-3 tw-font-semibold tw-rounded-t" style="font-size: 20px;"><i class="fa fa-check"></i>
+                                                    Latest finished to do's</h4>
+                                                <ul class="list-unstyled todo finished-todos todos-sortable ui-sortable">
+                                                    <li class="padding no-todos ui-state-disabled" >
+                                                        No finished todos found  </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 text-center padding">
+                                                <a href="#" class="btn btn-default text-center finished-loader disabled">
+                                                    Load More                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-    
                         </div>
-    
                     </div>
                     <!-- /.container-fluid -->
-    
                 </div>
                 <!-- End of Main Content -->
     
@@ -116,5 +117,27 @@
 
  <!-- Page level custom scripts -->
  <script src="js/demo/datatables-demo.js"></script>
+ <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-toggle="modal" data-target="#myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">To Do</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label for="userInput">Input</label>
+                <textarea class="form-control" id="userInput" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
