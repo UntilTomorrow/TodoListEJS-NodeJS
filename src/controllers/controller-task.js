@@ -1,5 +1,4 @@
 const config = require('../configs/database');
-const authenticateToken = require('../configs/jwt');
 
 
 let mysql      = require('mysql');
@@ -17,7 +16,6 @@ module.exports = {
 
     },
     add(req, res) {
-        //authenticateToken(req, res, () => {
           let inputDate = req.body.due_date;
           let parts = inputDate.split("-");
           let day = parts[0];
@@ -78,7 +76,7 @@ module.exports = {
           due_date: formattedDueDate
         };
       
-        let taskId = req.params.id; // Anda perlu mendapatkan ID tugas yang ingin diubah
+        let taskId = req.params.id; 
       
         let sql = "UPDATE tasks SET ? WHERE id = ?";
         pool.query(sql, [data, taskId], (err, results) => {
