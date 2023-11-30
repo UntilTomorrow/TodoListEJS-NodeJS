@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+const PORT = 9090;
 
 
 //Route file
@@ -20,6 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRoutes);
 app.use('/task', taskRoutes);
 
-app.listen(5000, () => {
-    console.log('runs well@ Port : ' + 5000);
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
