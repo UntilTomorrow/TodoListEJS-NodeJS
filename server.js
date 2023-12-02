@@ -4,9 +4,6 @@ const path = require('path');
 const app = express();
 const PORT = 8090;
 const dotenv = require('dotenv');
-//const { generateAndUpdateApiKey } = require('./src/configs/apikey');
-
-//const apikey = generateAndUpdateApiKey('helloguys');
 
 dotenv.config();
 
@@ -15,7 +12,7 @@ const checkApiKey = require('./src/configs/check')
 
 //Route file
 const homeRoutes = require('./src/routes/web');
-const taskRoutes = require('./src/routes/web')
+const taskRoutes = require('./src/routes/web');
 
 app.use(express.json());
 app.use(bodyParser.json());
